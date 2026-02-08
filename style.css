@@ -1,0 +1,212 @@
+*{
+  box-sizing:border-box;
+  font-family:'Press Start 2P', cursive;
+}
+
+body{
+  margin:0;
+  height:100vh;
+  background:#fde6dc;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+
+/* ================= SCREENS ================= */
+.screen{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  gap:26px;
+}
+
+.hidden{display:none}
+
+/* ================= CARD ================= */
+.card{
+  background:#fff0ea;
+  padding:32px 26px;
+  border-radius:28px;
+  width:90%;
+  max-width:380px;
+  box-shadow:0 16px 40px rgba(0,0,0,.15);
+}
+
+/* ================= TEXT ================= */
+h1{
+  font-size:18px;
+  color:#f08080;
+}
+
+p{
+  font-size:11px;
+  color:#b65b6b;
+  line-height:1.6;
+}
+
+/* ================= BUTTONS ================= */
+button{
+  padding:14px 10px;
+  width:100%;
+  max-width:240px;
+  font-size:10px;
+  background:#fff;
+  border:3px solid #f08080;
+  border-radius:18px;
+  cursor:pointer;
+  transition:.25s;
+}
+
+button:hover{
+  background:#f08080;
+  color:white;
+  transform:scale(1.05);
+}
+
+/* ================= OPTIONS ================= */
+#options{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:14px;
+  margin-top:18px;
+}
+
+#options button{
+  opacity:0;
+  animation:optionIn .4s forwards;
+}
+
+@keyframes optionIn{
+  from{transform:translateY(12px);opacity:0}
+  to{transform:translateY(0);opacity:1}
+}
+
+/* ================= HEARTS ================= */
+#hearts{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:-1;
+}
+
+.heart{
+  position:absolute;
+  width:18px;
+  height:18px;
+  background:#ff9aa2;
+  transform:rotate(45deg);
+  animation:floatUp linear infinite;
+  opacity:.7;
+}
+
+.heart::before,
+.heart::after{
+  content:"";
+  position:absolute;
+  width:18px;
+  height:18px;
+  background:#ff9aa2;
+  border-radius:50%;
+}
+
+.heart::before{top:-9px;left:0}
+.heart::after{left:-9px;top:0}
+
+@keyframes floatUp{
+  from{transform:translateY(110vh) rotate(45deg)}
+  to{transform:translateY(-120vh) rotate(45deg)}
+}
+
+/* ================= ENVELOPE ================= */
+#envelopeScreen{
+  background:rgba(0,0,0,.25);
+}
+
+.envelope{
+  width:280px;
+  height:220px;
+  background:#f08080;
+  border-radius:12px;
+  position:relative;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.envelope::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:#f49797;
+  clip-path:polygon(0 0,50% 55%,100% 0);
+  transform-origin:top;
+  transition:.9s;
+}
+
+.envelope.open::after{
+  transform:rotateX(180deg);
+}
+
+/* ================= LETTER ================= */
+.letter{
+  position:absolute;
+  top:28px;
+  left:16px;
+  right:16px;
+  bottom:20px;
+
+  background:white;
+  border-radius:18px;
+  padding:18px 14px;
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:space-between;
+
+  /* 👇 CLAVE */
+  overflow:visible;
+
+  transform:scale(.3) translateY(90px);
+  opacity:0;
+  transition:1s cubic-bezier(.2,1.2,.4,1);
+}
+
+.envelope.open .letter{
+  transform:scale(1) translateY(-20px);
+  opacity:1;
+}
+
+.letter h2{
+  font-size:13px;
+  margin:0;
+  color:#000;
+}
+
+.letter p{
+  font-size:9px;
+  line-height:1.5;
+  margin:4px 0;
+  color:#b65b6b;
+}
+
+/* ================= FINAL BUTTON ================= */
+#finalBtn{
+  margin-top:8px;
+  background:#f08080;
+  color:white;
+  border:none;
+  box-shadow:0 4px 0 #c95c6d;
+}
+
+#finalBtn:hover{
+  background:#ff9aa2;
+  transform:scale(1.08);
+}

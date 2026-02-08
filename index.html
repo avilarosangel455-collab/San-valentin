@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>San Valentín 💖</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<audio id="music" src="audio/nuestra-cancion.mp3" loop></audio>
+<audio id="correctSound" src="audio/correct.mp3"></audio>
+
+<div id="hearts"></div>
+
+<!-- START -->
+<section id="startScreen" class="screen">
+  <h1 id="startText"></h1>
+  <button id="startBtn">START</button>
+</section>
+
+<!-- QUIZ -->
+<section id="quizScreen" class="screen hidden">
+  <div class="card">
+    <p id="question"></p>
+    <div id="options"></div>
+    <p id="message"></p>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section id="envelopeScreen" class="screen hidden">
+  <div class="envelope" id="envelope">
+    <div class="letter">
+      <h2>Para ti 💌</h2>
+      <p>
+        Mi vida, te mereces.<br>
+        el mundo entero y como.<br>
+        aun no puedo dartelo,<br>
+        te doy este pequeño<br>
+        detalle.
+      </p>
+      <button id="finalBtn">TE AMO 💖</button>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL -->
+<section id="finalScreen" class="screen hidden">
+  <h1>GAME OVER🎮</h1>
+  <p>Te amo con todo mi corazón 💕</p>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
+
